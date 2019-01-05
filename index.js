@@ -1,4 +1,4 @@
-//var katzDeliLine = [];
+//var katzDeliLine = [Ada, Grace, Kent];
 
 function takeANumber (katzDeliLine, name) {
   katzDeliLine.push(name);
@@ -8,16 +8,23 @@ function takeANumber (katzDeliLine, name) {
 // alternative solutions:
 // katzDeliLine[katzDeliLine.length] = name;
 // katzDeliLine.splice(katzDeliLine.length,0,name);
-// katzDeliLine = [...katzDeliLine,name]; ... this does not work in IDE. Chrome/FF/Safari
 
 // var num = katzDeliLine.length;
+
+var num = 0;
+function takeANumber2 (katzDeliLine){
+ katzDeliLine.push(num);
+ num++;
+ return `You are ${num-1}`;
+  
+}
 
 function nowServing(katzDeliLine) {
   if (katzDeliLine.length === 0) {
     return "There is nobody waiting to be served!";
   } else {
     var firstInLine = katzDeliLine.shift();
-    return `Currently serving ${firstInLine}.`;
+    return `Currently serving ${katzDeliLine.shift()};.`;
   }
 }
 
@@ -40,7 +47,6 @@ function currentLine(katzDeliLine) {
     return phrase.substring(0, phrase.length-2);
   }
 } 
-
 
 //alternative using a for loop:
 
